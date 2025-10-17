@@ -9,6 +9,8 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QAction, QIntValidator, QPixmap
 from dialogs.author_dialog import AuthorDialog
 from dialogs.about_dialog import AboutDialog
+from dialogs.color_dialog import ColorDialog
+from dialogs.initial_dialog import InitialDialog
 
 class MainWindow(QMainWindow):
     speed = 0
@@ -187,10 +189,19 @@ class MainWindow(QMainWindow):
         settings_menu.addAction(self.initial_action)
 
     def show_color_dialog(self):
-        print(1)
+        dialog = ColorDialog(self, people=self.people)
+
+        if dialog.exec() == QDialog.DialogCode.Accepted:
+            self.people = dialog.updated_people
+            self.initial_people = self.people
 
     def show_initial_dialog(self):
-        print(2)
+        dialog = InitialDialog(self, people=self.people)
+        dialog.exec()
+
+        # if dialog.exec() == QDialog.DialogCode.Accepted:
+        #     self.people = dialog.updated_people
+        #     self.initial_people = self.people
 
     def init_reference_menu(self, menu_bar):
         reference_menu = menu_bar.addMenu("Справка")
@@ -309,6 +320,9 @@ class MainWindow(QMainWindow):
                     )
 
                     return
+
+                self.speed_slider.setValue(value)
+                self.speed = value
             else:
                 self.speed_input.blockSignals(True)
                 self.speed_input.setText(str(self.speed))
