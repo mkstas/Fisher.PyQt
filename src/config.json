@@ -4,27 +4,27 @@
   "people": [
     {
       "id": 0,
-      "count": 0,
+      "count": 2,
       "color": "#000000"
     },
     {
       "id": 1,
-      "count": 1,
+      "count": 4,
       "color": "#800000"
     },
     {
       "id": 2,
-      "count": 2,
+      "count": 1,
       "color": "#008000"
     },
     {
       "id": 3,
-      "count": 3,
+      "count": 1,
       "color": "#808000"
     },
     {
       "id": 4,
-      "count": 4,
+      "count": 0,
       "color": "#000080"
     },
     {
@@ -34,22 +34,22 @@
     },
     {
       "id": 6,
-      "count": 6,
+      "count": 3,
       "color": "#008080"
     },
     {
       "id": 7,
-      "count": 7,
+      "count": 1,
       "color": "#c0c0c0"
     },
     {
       "id": 8,
-      "count": 8,
+      "count": 4,
       "color": "#808080"
     },
     {
       "id": 9,
-      "count": 9,
+      "count": 2,
       "color": "#ff0000"
     }
   ]
